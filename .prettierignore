@@ -1,3 +1,5 @@
+.husky
+.prettierignore
 coverage
 dist
 package*.json
