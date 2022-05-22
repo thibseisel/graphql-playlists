@@ -1,5 +1,6 @@
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo"
-import { Module } from "@nestjs/common"
+import { Module, ValidationPipe } from "@nestjs/common"
+import { APP_PIPE } from "@nestjs/core"
 import { GraphQLModule } from "@nestjs/graphql"
 import { AppResolver } from "./app.resolver"
 import { ConfigModule } from "./config"
@@ -13,6 +14,14 @@ import { ConfigModule } from "./config"
     }),
     ConfigModule,
   ],
-  providers: [AppResolver],
+  providers: [
+    {
+      provide: APP_PIPE,
+      useValue: new ValidationPipe({
+        whitelist: true,
+      }),
+    },
+    AppResolver,
+  ],
 })
 export class AppModule {}
