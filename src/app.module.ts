@@ -3,6 +3,7 @@ import { Module, ValidationPipe } from "@nestjs/common"
 import { APP_PIPE } from "@nestjs/core"
 import { GraphQLModule } from "@nestjs/graphql"
 import { AppResolver } from "./app.resolver"
+import { AuthModule } from "./auth"
 import { ConfigModule } from "./config"
 
 @Module({
@@ -13,6 +14,7 @@ import { ConfigModule } from "./config"
       sortSchema: true,
     }),
     ConfigModule,
+    AuthModule,
   ],
   providers: [
     {
