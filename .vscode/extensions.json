@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "EditorConfig.EditorConfig",
+    "GraphQL.vscode-graphql",
     "Orta.vscode-jest",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode"
